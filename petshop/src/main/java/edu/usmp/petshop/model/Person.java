@@ -9,7 +9,7 @@ public class Person implements Serializable{
 	private String lastName;
 	private String address;
 	private String city;
-	private Number phone;
+	private Integer phone;
 	
 	public String getAddress() {
 		return address;
@@ -23,10 +23,10 @@ public class Person implements Serializable{
 	public void setCity(String city) {
 		this.city = city;
 	}
-	public Number getPhone() {
+	public Integer getPhone() {
 		return phone;
 	}
-	public void setPhone(Number phone) {
+	public void setPhone(Integer phone) {
 		this.phone = phone;
 	}
 	public Integer getId() {
