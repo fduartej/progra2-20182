@@ -7,7 +7,28 @@ public class Person implements Serializable{
 	private Integer id;
 	private String firstName;
 	private String lastName;
+	private String address;
+	private String city;
+	private Number phone;
 	
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public String getCity() {
+		return city;
+	}
+	public void setCity(String city) {
+		this.city = city;
+	}
+	public Number getPhone() {
+		return phone;
+	}
+	public void setPhone(Number phone) {
+		this.phone = phone;
+	}
 	public Integer getId() {
 		return id;
 	}

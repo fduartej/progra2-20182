@@ -10,6 +10,9 @@
 <form action="#" th:action="@{/new}" th:object="${person}" method="post">
 	<p>Nombre: <input type="text" th:field="*{firstName}"/></p>
 	<p>Apellido: <input type="text" th:field="*{lastName}"/></p>
+	<p>Direccion: <input type="text" th:field="*{address}"/></p>
+	<p>Ciudad: <input type="text" th:field="*{city}"/></p>
+	<p>Telefono: <input type="text" th:field="*{phone}"/></p>
 	<p>
 		<input type="submit" value="enviar"/>
 		<input type="reset" value="cancelar"/>
