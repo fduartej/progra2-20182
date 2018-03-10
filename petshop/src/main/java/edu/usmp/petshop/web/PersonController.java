@@ -10,7 +10,7 @@ import edu.usmp.petshop.model.Person;
 @Controller
 public class PersonController {
 
-	@GetMapping("/new")
+	@GetMapping("/")
 	public String initCreationForm(Model model) {
 		model.addAttribute("person", new Person());
 		return "personForm";

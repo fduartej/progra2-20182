@@ -6,7 +6,15 @@
 </head>
 <body>
 
-Aqui empezamos
+
+<form action="#" th:action="@{/new}" th:object="${person}" method="post">
+	<p>Nombre: <input type="text" th:field="firstName"/></p>
+	<p>Apellido: <input type="text" th:field="lastName"/></p>
+	<p>
+		<input type="submit" value="enviar"/>
+		<input type="reset" value="cancelar"/>
+	</p>
+</form>
 
 </body>
 </html>
