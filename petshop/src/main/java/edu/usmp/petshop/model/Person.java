@@ -30,7 +30,17 @@ public class Person implements Serializable{
 	@NotNull
 	@Min(9)
 	private Integer phone;
+	@NotNull
+	@Email
+	private String email;
 	
+	
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
 	public String getAddress() {
 		return address;
 	}
