@@ -2,18 +2,22 @@ package edu.usmp.petshop.web;
 
 import javax.validation.Valid;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 
 import edu.usmp.petshop.model.Person;
+import edu.usmp.petshop.repository.PersonRepository;
 
 @Controller
 public class PersonController {
+	
+	@Autowired
+	private PersonRepository personRepository;
 
 	@GetMapping("/new")
 	public String initCreationForm(Model model) {
@@ -28,6 +32,7 @@ public class PersonController {
 			return "personForm";
 		}
 		person.setPhone(person.getPhone() + 5);
+		personRepository.save(person);
 		return "resultForm";
 	}
 }
