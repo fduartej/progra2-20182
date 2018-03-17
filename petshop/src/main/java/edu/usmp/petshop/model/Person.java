@@ -16,7 +16,7 @@ public class Person implements Serializable{
 	
 	private Integer id;
 	@NotNull
-	@Size(min=2, max=30)
+	@Size(min=2, max=30,message="mi mensaje")
 	private String firstName;
 	@NotNull
 	@Size(min=2, max=30)
