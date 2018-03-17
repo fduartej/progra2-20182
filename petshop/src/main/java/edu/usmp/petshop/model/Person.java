@@ -2,13 +2,33 @@ package edu.usmp.petshop.model;
 
 import java.io.Serializable;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import lombok.Getter;
+import lombok.Setter;
+
+
 public class Person implements Serializable{
 
+	
 	private Integer id;
+	@NotNull
+	@Size(min=2, max=30)
 	private String firstName;
+	@NotNull
+	@Size(min=2, max=30)
 	private String lastName;
+	@NotNull
+	@Size(min=2, max=50)
 	private String address;
+	@NotNull
+	@Size(min=2, max=20)
 	private String city;
+	@NotNull
+	@Min(9)
 	private Integer phone;
 	
 	public String getAddress() {

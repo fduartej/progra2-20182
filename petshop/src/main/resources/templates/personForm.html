@@ -8,15 +8,53 @@
 
 
 <form action="#" th:action="@{/new}" th:object="${person}" method="post">
-	<p>Nombre: <input type="text" th:field="*{firstName}"/></p>
-	<p>Apellido: <input type="text" th:field="*{lastName}"/></p>
-	<p>Direccion: <input type="text" th:field="*{address}"/></p>
-	<p>Ciudad: <input type="text" th:field="*{city}"/></p>
-	<p>Telefono: <input type="text" th:field="*{phone}"/></p>
-	<p>
-		<input type="submit" value="enviar"/>
-		<input type="reset" value="cancelar"/>
-	</p>
+	<table>
+		
+		<tr>
+			<td>Nombre:</td>
+			<td><input type="text" th:field="*{firstName}"/></td>
+			<td th:if="${#fields.hasErrors('firstName')}"
+			    th:erros="*{firstName}">Nombre Error</td>
+		</tr>
+		
+		<tr>
+			<td>Apellido:</td>
+			<td><input type="text" th:field="*{lastName}"/></td>
+			<td th:if="${#fields.hasErrors('lastName')}"
+			    th:erros="*{lastName}">Apellido Error</td>
+		</tr>
+
+		<tr>
+			<td>Direccion:</td>
+			<td><input type="text" th:field="*{address}"/></td>
+			<td th:if="${#fields.hasErrors('address')}"
+			    th:erros="*{address}">Direccion Error</td>
+		</tr>
+
+		<tr>
+			<td>Ciudad:</td>
+			<td><input type="text" th:field="*{city}"/></td>
+			<td th:if="${#fields.hasErrors('city')}"
+			    th:erros="*{city}">Ciudad Error</td>
+		</tr>
+
+
+		<tr>
+			<td>Telefono:</td>
+			<td><input type="text" th:field="*{phone}"/></td>
+			<td th:if="${#fields.hasErrors('phone')}"
+			    th:erros="*{phone}">Telefono Error</td>
+		</tr>
+		
+		<tr>
+			<td></td>
+			<td><input type="submit" value="enviar"/>
+				<input type="reset" value="cancelar"/></td>
+			<td></td>
+		</tr>
+	</table>
+
+
 </form>
 
 </body>
