@@ -1,5 +1,8 @@
 package edu.usmp.petshop.web;
 
+import java.util.List;
+import java.util.Map;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,4 +38,13 @@ public class PersonController {
 		personRepository.save(person);
 		return "resultForm";
 	}
+	
+	@GetMapping("/list")
+	public String list(Map<String, Object> model) {
+		List<Person> persons =personRepository.findAll();
+		model.put("persons", persons);
+		return "listPerson";
+	}
+	
+	
 }
