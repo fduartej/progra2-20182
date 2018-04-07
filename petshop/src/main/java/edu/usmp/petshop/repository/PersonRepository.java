@@ -2,6 +2,7 @@ package edu.usmp.petshop.repository;
 
 import java.util.List;
 
+import org.hibernate.sql.Delete;
 import org.springframework.data.repository.Repository;
 
 import edu.usmp.petshop.model.Person;
@@ -16,4 +17,6 @@ extends Repository<Person,Integer>
 	List<Person> findAll();
 	
 	Person findById(Integer id);
+	
+	void delete(Person person);
 }

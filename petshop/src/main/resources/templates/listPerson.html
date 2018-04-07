@@ -30,8 +30,11 @@
   <tr th:each="person : ${persons}">
   	<td>
   		<a th:href="@{'/person/__${person.id}__/edit'}"
-  			th:text="${person.id}"   class="btn btn-info" role="button"
-  			/>
+  			class="btn btn-info" role="button"
+  			>Edit</a>
+  		<a th:href="@{'/person/__${person.id}__/delete'}"
+  			class="btn btn-danger" role="button"
+  			>Delete</a>	
   	</td>
   	<td th:text="${person.lastName}"></td>
   	<td th:text="${person.firstName}"></td>

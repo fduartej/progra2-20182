@@ -37,9 +37,9 @@ public class PersonController {
 		if(bindingResult.hasFieldErrors()) {
 			return "personForm";
 		}
-		person.setPhone(person.getPhone() + 5);
+		person.setPhone(person.getPhone());
 		personRepository.save(person);
-		return "resultForm";
+		return "redirect:/person/list";
 	}
 	
 	@GetMapping("/person/list")
@@ -68,6 +68,14 @@ public class PersonController {
 		}
 		person.setId(personId);
 		personRepository.save(person);
+		return "redirect:/person/list";
+	}
+	
+	@GetMapping("/person/{personId}/delete")
+	public String delete(@PathVariable("personId") int personId, 
+			Model model){
+		Person person =personRepository.findById(personId);
+		personRepository.delete(person);
 		return "redirect:/person/list";
 	}
 	
