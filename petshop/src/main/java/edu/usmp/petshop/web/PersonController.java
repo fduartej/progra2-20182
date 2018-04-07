@@ -1,5 +1,7 @@
 package edu.usmp.petshop.web;
 
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.log;
+
 import java.util.List;
 import java.util.Map;
 
@@ -61,6 +63,7 @@ public class PersonController {
 			BindingResult bindingResult,
 			@PathVariable("personId") int personId){
 		if(bindingResult.hasFieldErrors()) {
+			System.err.println("error");
 			return "redirect:/person/{personId}/edit";
 		}
 		person.setId(personId);
