@@ -22,13 +22,13 @@ public class PersonController {
 	@Autowired
 	private PersonRepository personRepository;
 
-	@GetMapping("/new")
+	@GetMapping("/person/new")
 	public String initCreationForm(Model model) {
 		model.addAttribute("person", new Person());
 		return "personForm";
 	}
 	
-	@PostMapping("/new")
+	@PostMapping("/person/new")
 	public String submitForm(@Valid Person person,
 			BindingResult bindingResult) {
 		if(bindingResult.hasFieldErrors()) {
@@ -39,7 +39,7 @@ public class PersonController {
 		return "resultForm";
 	}
 	
-	@GetMapping("/list")
+	@GetMapping("/person/list")
 	public String list(Map<String, Object> model) {
 		List<Person> persons =personRepository.findAll();
 		model.put("persons", persons);
