@@ -1,17 +1,30 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
-<title>Personas</title>
+  
+  <title>Personas</title>
+  
+  <meta charset="ISO-8859-1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-<a href="/person/new">Agregar Persona</a>
+
+<div class="container">
+<a href="/person/new">Add</a>
 <br/>
-<table>
+<table class="table">
+<thead>
+
   <tr>
-  	<td>id</td>
-  	<td>nombre</td>
+  	<td>Id</td>
+  	<td>Nombre</td>
   </tr>
+  </thead>
+       
+   <tbody>
   <tr th:each="person : ${persons}">
   	<td>
   		<a th:href="@{'/person/__${person.id}__/edit'}"
@@ -20,9 +33,9 @@
   	</td>
   	<td th:text="${person.firstName}"></td>
   </tr>
-
+</tbody>
 </table>
-
+</div>
 
 </body>
 </html>
