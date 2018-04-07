@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
 <title>Edit Person</title>
+
+  <meta charset="ISO-8859-1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </head>
 <body>
 
+<div class="container">
+<h2>Edit Person</h2>
 
 <form action="#" th:object="${person}" th:action="@{'/person/__${person.id}__/edit'}"  method="post">
-	<table>
+	<table class="table">
 		
 		
 
@@ -59,8 +67,8 @@
 		
 		<tr>
 			<td></td>
-			<td><input type="submit" value="grabar"/>
-				<input type="reset" value="cancelar"/></td>
+			<td><input type="submit" value="grabar" class="btn btn-primary"/>
+				<input type="reset" value="cancelar" class="btn btn-danger"/></td>
 			<td></td>
 		</tr>
 	</table>
@@ -70,6 +78,6 @@
 
 <br/>
 <a href="/person/list">Listar Personas</a>	
-
+</div>
 </body>
 </html>
