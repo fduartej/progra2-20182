@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 
@@ -46,5 +47,25 @@ public class PersonController {
 		return "listPerson";
 	}
 	
+	@GetMapping("/person/{personId}/edit")
+	public String edit(@PathVariable("personId") int personId, 
+			Model model){
+		Person person =personRepository.findById(personId);
+		model.addAttribute(person);
+		return "editPerson";
+	}
+	
+	@PostMapping("/person/{personId}/edit")
+	public String update(
+			@Valid Person person,
+			BindingResult bindingResult,
+			@PathVariable("personId") int personId){
+		if(bindingResult.hasFieldErrors()) {
+			return "redirect:/person/{personId}/edit";
+		}
+		person.setId(personId);
+		personRepository.save(person);
+		return "redirect:/person/list";
+	}
 	
 }

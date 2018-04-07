@@ -12,7 +12,11 @@
   	<td>nombre</td>
   </tr>
   <tr th:each="person : ${persons}">
-  	<td th:text="${person.id}"></td>
+  	<td>
+  		<a th:href="@{'/person/_${person.id}_/edit'}"
+  			th:text="${person.id}"
+  			/>
+  	</td>
   	<td th:text="${person.firstName}"></td>
   </tr>
 
