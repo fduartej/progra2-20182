@@ -1,8 +1,7 @@
 package edu.usmp.petshop.web;
 
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.log;
-
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 import javax.validation.Valid;
@@ -26,7 +25,7 @@ public class PersonController {
 	private PersonRepository personRepository;
 
 	@GetMapping("/person/new")
-	public String initCreationForm(Model model) {
+	public String initCreationForm(Model model,Locale locale) {
 		model.addAttribute("person", new Person());
 		return "personForm";
 	}
