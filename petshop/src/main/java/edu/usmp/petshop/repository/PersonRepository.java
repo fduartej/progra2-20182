@@ -2,7 +2,7 @@ package edu.usmp.petshop.repository;
 
 import java.util.List;
 
-import org.hibernate.sql.Delete;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.repository.Repository;
 
 import edu.usmp.petshop.model.Person;
@@ -14,6 +14,7 @@ extends Repository<Person,Integer>
 
 	void save(Person person);
 	
+	@Cacheable("person")
 	List<Person> findAll();
 	
 	Person findById(Integer id);
