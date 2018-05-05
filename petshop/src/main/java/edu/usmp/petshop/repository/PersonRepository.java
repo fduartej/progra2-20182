@@ -2,6 +2,8 @@ package edu.usmp.petshop.repository;
 
 import java.util.List;
 
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.repository.Repository;
 
@@ -12,9 +14,10 @@ public interface PersonRepository
 extends Repository<Person,Integer>
 {
 
+	@CacheEvict(value="person",allEntries=true)
 	void save(Person person);
 	
-	@Cacheable("person")
+	@Cacheable(value="person")
 	List<Person> findAll();
 	
 	Person findById(Integer id);
