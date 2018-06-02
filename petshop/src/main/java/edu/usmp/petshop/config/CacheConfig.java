@@ -16,6 +16,7 @@ public class CacheConfig {
 		return cm -> {
 			Configuration<Object, Object> cacheConfiguration = createCacheConfiguration();
 			cm.createCache("person", cacheConfiguration);
+			cm.createCache("contact", cacheConfiguration);
 		};
 	}
 

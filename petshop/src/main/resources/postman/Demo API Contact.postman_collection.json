@@ -1,0 +1,77 @@
+{
+	"id": "620623f2-a335-4150-f24c-28454b245d41",
+	"name": "Demo API Contact",
+	"description": "",
+	"order": [
+		"b6b47da3-a39a-074e-80fe-ae3ae96015d7",
+		"b0c40e37-6c4a-d61c-f096-f280b2ecb41b"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1527950232026,
+	"owner": 0,
+	"public": false,
+	"requests": [
+		{
+			"id": "b0c40e37-6c4a-d61c-f096-f280b2ecb41b",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/api/contacts",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "620623f2-a335-4150-f24c-28454b245d41",
+			"data": null,
+			"dataMode": "params",
+			"name": "Contact GET",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1527950259113,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "b6b47da3-a39a-074e-80fe-ae3ae96015d7",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/api/contacts",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "620623f2-a335-4150-f24c-28454b245d41",
+			"data": [],
+			"dataMode": "raw",
+			"name": "Contact Save",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1527950235931,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n\t\"name\":\"Test\",\n\t\"phone\":\"999552312\",\n\t\"email\":\"test@test.com\"\n}"
+		}
+	]
+}
